@@ -10,16 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        use: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Setup node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: 20
       - name: Install pnpm
-        uses: npm install -g pnpm 
+        run: npm install -g pnpm 
       - name: Install dependencies
-        uses: pnpm install
+        run: pnpm install
       - name: Build
-        uses: pnpm run build
+        run: pnpm run build
       - name: Test
-        uses: pnpm run test
+        run: pnpm run test
