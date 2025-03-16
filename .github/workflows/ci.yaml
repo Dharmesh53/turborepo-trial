@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
 
 jobs:
   build:
@@ -16,10 +16,10 @@ jobs:
         with:
           node-version: 20
       - name: Install pnpm
-        use: npm install -g pnpm 
+        uses: npm install -g pnpm 
       - name: Install dependencies
         uses: pnpm install
       - name: Build
-        use: pnpm run build
+        uses: pnpm run build
       - name: Test
-        use: pnpm run test
+        uses: pnpm run test
